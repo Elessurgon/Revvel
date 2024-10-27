@@ -13,7 +13,6 @@ defmodule Revvel.CsvHelper do
 
   def xlsxReader(path, filterConditionFunction)  do
     [ok: table_id] = Xlsxir.multi_extract(path)
-    #
 
     table_id
     |> Xlsxir.get_mda
