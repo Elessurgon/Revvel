@@ -18,7 +18,10 @@ defmodule Revvel.CsvHelper do
     |> Xlsxir.get_mda
     |> Enum.filter(filterConditionFunction)
     |> Enum.reduce([], fn {_key, value}, acc -> [value | acc] end)
-    |> Enum.reduce(0, fn map, acc -> acc + String.to_float(map[8]) end)
+    |> Enum.reduce(0.0, fn map, acc -> acc + Revvel.Utils.parse_to_float(Map.get(map, 8, "0.0")) end)
     |> Float.round(2)
   end
+
+
+
 end

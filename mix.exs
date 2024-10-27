@@ -13,14 +13,15 @@ defmodule Revvel.MixProject do
 
   def application do
     [
-      extra_applications: [:logger, :xlsxir]
+      extra_applications: [:logger, :xlsxir, :hound]
     ]
   end
 
   defp deps do
     [
       {:csv, "~> 3.2"},
-      {:xlsxir, "~> 1.6.4"}
+      {:xlsxir, "~> 1.6.4"},
+      {:hound, "~> 1.0"}
     ]
   end
 end
